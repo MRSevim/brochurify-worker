@@ -26,8 +26,7 @@ export const getScreenSnapshot = async (html) => {
   try {
     const instance = await puppeteer.launch({
       headless: true,
-      defaultViewport: null,
-      executablePath: "/usr/bin/google-chrome",
+      timeout: 0,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
     const page = await instance.newPage();
